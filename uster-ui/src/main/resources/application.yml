@@ -1,0 +1,7 @@
+server:
+  port: 9102
+
+spring:
+  mvc:
+    format:
+      date-time: iso
