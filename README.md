@@ -15,7 +15,7 @@ Instrucciones de compilación / arranque:
   * Compilar el proyecto maven: "clean install".
 
 
-  * Ejecutar los mádulos:
+  * Ejecutar los módulos:
     * .\TechnicalTest\uster-ws\src\main\java\com\test\uster\ws\UsterWebserviceApp.java (Webservice)
     * .\TechnicalTest\uster-ui\src\main\java\com\test\uster\ui\UsterUIApp.java (UI)
 
@@ -25,7 +25,7 @@ Instrucciones de compilación / arranque:
     * .\TechnicalTest\uster-ui\src\main\resources\application.yml (UI básica)
 
   * Accesos a la app (valores por defecto):
-    * Webservice: http://localhost:9101/
+    * Webservice: http://localhost:9101/ + endpoint
     * H2 console: http://localhost:9101/h2
     * UI (básica): http://localhost:9102/home
 
