@@ -2,19 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
                 echo 'building the application...'
+                bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
-        stage('test') {
+        stage('Verify') {
             steps {
-                echo 'testing the application...'
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo 'deploying the application...'
+                junit '**/target/surefire-reports/TEST-*.xml'
+                archiveArtifacts 'uster-ui/target/*.jar'
+                archiveArtifacts 'uster-ws/target/*.jar'
             }
         }
     }
