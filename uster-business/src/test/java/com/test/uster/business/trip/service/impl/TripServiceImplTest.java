@@ -25,6 +25,7 @@ import org.springframework.test.util.ReflectionTestUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -131,9 +132,7 @@ class TripServiceImplTest {
     }
 
     private TripRequest createMockedTrip(final Long vehicleId, final Long driverId) throws ParseException {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("EST"));
-        return new TripRequest(vehicleId, driverId, simpleDateFormat.parse("2021-11-18"));
+        return new TripRequest(vehicleId, driverId, new Date());
     }
 
     private Vehicle createMockedVehicle() {
