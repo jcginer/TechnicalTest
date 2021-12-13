@@ -1,34 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jhooq-springboot
+  name: uster-service
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: jhooq-springboot
+      app: uster-service
   template:
     metadata:
       labels:
-        app: jhooq-springboot
+        app: uster-service
     spec:
       containers:
         - name: springboot
-          image: jcginerdockerhub/uster-service
+          image: jcginerdockerhub/uster-service:latest
           ports:
             - containerPort: 8080
           env:
             - name: PORT
-              value: "8080"
+              value: "9101"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: jhooq-springboot
+  name: uster-service
 spec:
-  type: LoadBalancer
+  selector:
+    app: uster-service
   ports:
     - port: 80
-      targetPort: 8080
-  selector:
-    app: jhooq-springboot
+      targetPort: 9101
+  type: LoadBalancer
