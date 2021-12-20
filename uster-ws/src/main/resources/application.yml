@@ -16,6 +16,8 @@ spring:
     console:
       enabled: true
       path: /h2
+      settings:
+        web-allow-others: true
   mvc:
     format:
       date-time: iso
